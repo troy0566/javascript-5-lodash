@@ -282,11 +282,13 @@ const myEmployees = [
   }
 ];
 
-const myEmployeesAddresses = 0; // use map to get addresses here.
+//const myEmployeesAddresses = 0;
+const myEmployeesAddresses = _.map(myEmployees, 'address'); // use map to get addresses here.
+//_.map(myEmployees, 'address');
 
 // Now we want to use map to get an array of ages of the employees.
-
-const myEmployeesAges = 0; // use map to get ages here.
+//const myEmployeesAges = 0;
+const myEmployeesAges = _.map(myEmployees, 'age'); // use map to get ages here.
 
 // union
 //  Union lets us take 2 arrays, and create a new array that only has 1 entry for
@@ -326,8 +328,8 @@ const breeFriendsEmails = [
   "dave@gmail.com"
 ];
 
-const listToSendEmailsTo = 0; // Put lodash here to make list of the union of the two address.
-
+//const listToSendEmailsTo = 0; // Put lodash here to make list of the union of the two address.
+const listToSendEmailsTo = _.union(bobFriendsEmails, breeFriendsEmails);
 // intersection
 //  Intersection lets us take two arrays, and create a new array that only
 //  contains shared elements.
@@ -339,7 +341,8 @@ const listToSendEmailsTo = 0; // Put lodash here to make list of the union of th
 // Bob and Bree have decided that instead of inviting everyone they know to their
 // party. They are instead only going to invite those people that they both know.
 
-const listOfSharedEmails = 0; // Use lodash to create the list that are in both lists
+//const listOfSharedEmails = 0; // Use lodash to create the list that are in both lists
+const listOfSharedEmails = _.intersection(bobFriendsEmails, breeFriendsEmails);
 
 // groupBy
 //  Group By lets us take an array of objects, and group then into groups based
@@ -403,9 +406,10 @@ const purchases = [
   { month: "February", price: 23.65 }
 ];
 
-const purchasesByMonth = 0; // Use groupBy to group the purchases by the month that they were made.
-
+//const purchasesByMonth = 0; // Use groupBy to group the purchases by the month that they were made.
+const purchasesByMonth = _.groupBy(purchases, 'month');
 // Bonus Points
+
 const totalByMonth = 0; // Use the grouped purchasesByMonth and reduce to create a totalByMonth object.
 
 // memoize
